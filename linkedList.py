@@ -69,7 +69,16 @@ class linkedList:
 	# 		temp_node.setNext(self.head)
 	# 		self.head = temp_node
 
-
+	def reverse_it(self):
+		current_node = self.head
+		reversed_head_node = None
+		temp = None
+		while current_node != None:
+			temp = current_node.getNext()
+			current_node.setNext(reversed_head_node)
+			reversed_head_node = current_node
+			current_node = temp
+			self.head = reversed_head_node
 
 	def prn(self):
 		current_node = self.head
@@ -81,9 +90,12 @@ class linkedList:
 
 if __name__ == '__main__':
 	L = linkedList()
-	for i in range(1, 11):
+	for i in range(2, 10, 2):
 		L.insertEnd2(i)
-
+	L.prn()
+	print
+	L.reverse_it()
+	print
 	L.prn()
 
 
