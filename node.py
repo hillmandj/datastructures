@@ -7,7 +7,7 @@ class Node:
 		print self.data
 		
 	def getData(self):
-		return str(self.data)
+		return self.data
 				
 	def getNext(self):
 		return self.ptr
